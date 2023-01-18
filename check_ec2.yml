@@ -1,0 +1,19 @@
+---
+metadata:
+ name: "Org's compute instances should be t2.micro , or t2.medium"
+ id: "CKV_AWS_CUSTOM_TYPES"
+ category: "NETWORKING"
+definition:
+ or:
+ - cond_type: "attribute"
+   resource_types:
+    - "aws_instance"
+   attribute: "instance_type"
+   operator: "equals"
+   value: "t2.micro"
+ - cond_type: "attribute"
+   resource_types:
+   - "aws_instance"
+   attribute: "instance_type"
+   operator: "equals"
+   value: "t2.medium"
